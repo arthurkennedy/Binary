@@ -21,11 +21,42 @@ public abstract class Survivor {
     public abstract int getSurvivorQuantity();
 
     /**
+     * Get what type of survivor.
+     * @param survivor the int[] value of the survivor array
+     * @return the type of survivor class (String)
+     */
+    public abstract String getType(int[] survivor);
+
+    /**
+     * Set what type of survivor.
+     * @param survivor the int[] value of the survivor array
+     */
+    public abstract void setType(int[] survivor);
+
+    /**
+     * Set survivor's health.
+     * @param survivor the array value of the survivor.
+     */
+    public abstract int setHealth(int[] survivor);
+
+    /**
      * Returns a survivor's health.
      * @param survivorType the type of survivor.
      * @return the survivor's health.
      */
     public abstract int getHealth(int survivorType);
+
+    /**
+     * Set the survivor's attack value.
+     * @param attack the strength value of the survivor's attack
+     */
+    public abstract void setAttack(int attack);
+
+    /**
+     * Returns the the attack value.
+     * @return the survivor's attack strength value.
+     */
+    public abstract int getAttack();
 
     /**
      * Returns whether a character is dead.
@@ -35,13 +66,9 @@ public abstract class Survivor {
     public abstract boolean isDead(int[] survivor);
 
     /**
-     * Method for running the survivor's attack.
-     */
-    public abstract void attackTurn();
-
-    /**
      * Returns damage received from enemy.
+     * @param survivor the array value of the specific survior.
      * @return damage taken during enemy's attack turn.
      */
-    public abstract int takeDmg();
+    public abstract int takeDmg(int[] survivor);
 }

@@ -21,11 +21,42 @@ public abstract class Zombie {
     public abstract int getZombieQuantity();
 
     /**
+     * Get what type of zombie.
+     * @param zombie the int[] value of the zombie array
+     * @return the type of zombie class (String)
+     */
+    public abstract String getType(int[] zombie);
+
+    /**
+     * Set what type of zombie.
+     * @param zombie the int[] value of the zombie array
+     */
+    public abstract void setType(int[] zombie);
+
+    /**
+     * Set zombie's health.
+     * @param zombie the array value of the zombie.
+     */
+    public abstract int setHealth(int[] zombie);
+
+    /**
      * Returns a zombie's health.
-     * @param survivorType the type of zombie.
+     * @param zombieType the type of zombie.
      * @return the zombie's health.
      */
     public abstract int getHealth(int zombieType);
+
+    /**
+     * Set the zombie's attack value.
+     * @param attack the strength value of the zombie's attack
+     */
+    public abstract void setAttack(int attack);
+
+    /**
+     * Returns the the attack value.
+     * @return the zombie's attack strength value.
+     */
+    public abstract int getAttack();
 
     /**
      * Returns whether a character is dead.
@@ -35,14 +66,10 @@ public abstract class Zombie {
     public abstract boolean isDead(int[] zombie);
 
     /**
-     * Method for running the zombie's attack.
-     */
-    public abstract void attackTurn();
-
-    /**
      * Returns damage received from enemy.
+     * @param zombie the array value of the spcific zombie.
      * @return damage taken during enemy's attack turn.
      */
-    public abstract int takeDmg();
+    public abstract int takeDmg(int[] zombie);
 }
 
