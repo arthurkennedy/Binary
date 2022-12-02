@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /** CSC 422 Week 5 Team Project
 *  Written by Nate Turner 11/30/22
-*  Edited on
+*  Edited on 12/1/22
 */
 
 public abstract class Zombie {
