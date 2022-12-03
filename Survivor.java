@@ -21,6 +21,12 @@ public abstract class Survivor {
     public abstract int getSurvivorQuantity();
 
     /**
+     * Sets the number of survivors for that survivor type.
+     * @param type the quantity of survivors of that survivor type (int)
+     */
+    public abstract void setSurvivorQuantity(int type);
+
+    /**
      * Get what type of survivor.
      * @param survivor the int[] value of the survivor array
      * @return the type of survivor class (String)
@@ -37,7 +43,7 @@ public abstract class Survivor {
      * Set survivor's health.
      * @param survivor the array value of the survivor.
      */
-    public abstract int setHealth(int[] survivor);
+    public abstract void setHealth(int[] survivor);
 
     /**
      * Returns a survivor's health.
@@ -68,7 +74,8 @@ public abstract class Survivor {
     /**
      * Returns damage received from enemy.
      * @param survivor the array value of the specific survior.
+     * @param dmgReceived the value of the damaged to be received.
      * @return damage taken during enemy's attack turn.
      */
-    public abstract int takeDmg(int[] survivor);
+    public abstract int takeDmg(int[] survivor, int dmgReceived);
 }
