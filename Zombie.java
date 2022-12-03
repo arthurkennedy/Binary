@@ -16,9 +16,15 @@ public abstract class Zombie {
 
     /**
      * Returns the number of zombies.
-     * @return the current number of zombies.
+     * @return the current number of zombies of that zombie type.
      */
     public abstract int getZombieQuantity();
+
+    /**
+     * Sets the number of zombies for that zombie type.
+     * @param type the quantity of zombies of that zombie type (int)
+     */
+    public abstract void setZombieQuantity(int type);
 
     /**
      * Get what type of zombie.
@@ -37,7 +43,7 @@ public abstract class Zombie {
      * Set zombie's health.
      * @param zombie the array value of the zombie.
      */
-    public abstract int setHealth(int[] zombie);
+    public abstract void setHealth(int[] zombie);
 
     /**
      * Returns a zombie's health.
@@ -68,8 +74,9 @@ public abstract class Zombie {
     /**
      * Returns damage received from enemy.
      * @param zombie the array value of the spcific zombie.
+     * @param dmgReceived the value of the damaged to be received.
      * @return damage taken during enemy's attack turn.
      */
-    public abstract int takeDmg(int[] zombie);
+    public abstract int takeDmg(int[] zombie, int dmgReceived);
 }
 
