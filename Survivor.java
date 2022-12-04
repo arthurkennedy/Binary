@@ -13,6 +13,13 @@ public abstract class Survivor {
     String survivorType; //The description of which type of survivor
     int health; //The value of the character's health
     int attack; //The value of the character's attack against the zombies
+    String id;     //The [type + number] that identifies which survivor this is
+
+    /**
+     * Returns the ID of the survivor
+     * @return the ID of the survivor
+     */
+    public abstract String getId();
 
     /**
      * Returns the number of survivors.

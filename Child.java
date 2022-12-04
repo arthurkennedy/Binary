@@ -8,9 +8,14 @@ public class Child extends Survivor {
     
     int childQuantity;
 
-    public Child(){
+    public Child(String id){
         this.health = 20;
         this.attack = 2;
+        this.id = id;
+    }
+
+    public String getId(){
+        return this.id;
     }
 
     @Override

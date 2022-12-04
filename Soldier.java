@@ -9,9 +9,14 @@ public class Soldier extends Survivor {
     
     int soldierQuantity;
 
-    public Soldier(){
+    public Soldier(String id){
         this.health = 100;
         this.attack = 10;
+        this.id = id;
+    }
+
+    public String getId(){
+        return this.id;
     }
 
     @Override

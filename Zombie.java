@@ -13,6 +13,13 @@ public abstract class Zombie {
     String zombieType; //The description of which type of zombie
     int health; //The value of the character's health
     int attack; //The value of the character's attack against the survivors
+    String id;  //The [type + number] that identifies this zombie
+
+    /**
+     * Returns the ID of the zombie
+     * @return the ID of the zombie
+     */
+    public abstract String getId();
 
     /**
      * Returns the number of zombies.

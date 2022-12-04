@@ -19,9 +19,14 @@ public class Tank extends Zombie {
     // This should be specific to the zombie type class because it's a count of a specific type of zombie,
     // not quantity of zombies all together.
 
-    public Tank(){
+    public Tank(String id){
         this.health = 150;
         this.attack = 20;
+        this.id = id;
+    }
+
+    public String getId(){
+        return this.id;
     }
 
     @Override

@@ -10,9 +10,14 @@ public class Teacher extends Survivor {
     
     int teacherQuantity;
 
-    public Teacher(){
+    public Teacher(String id){
         this.health = 50;
         this.attack = 5;
+        this.id = id;
+    }
+
+    public String getId(){
+        return this.id;
     }
 
     @Override
