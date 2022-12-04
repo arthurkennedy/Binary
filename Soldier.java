@@ -35,8 +35,8 @@ public class Soldier extends Survivor {
     }
 
     @Override
-    public int getHealth(int survivorType) {
-        return health;
+    public int getHealth() {
+        return this.health;
     }
 
     @Override
@@ -65,6 +65,12 @@ public class Soldier extends Survivor {
     public int takeDmg(int[] survivor, int dmgReceived) {
         health -= dmgReceived;
         return health;
+    }
+
+    @Override
+    public void setSurvivorQuantity(int type) {
+        // TODO Auto-generated method stub
+        
     }
     
 }

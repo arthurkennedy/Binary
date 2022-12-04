@@ -47,10 +47,9 @@ public abstract class Zombie {
 
     /**
      * Returns a zombie's health.
-     * @param zombieType the type of zombie.
      * @return the zombie's health.
      */
-    public abstract int getHealth(int zombieType);
+    public abstract int getHealth();
 
     /**
      * Set the zombie's attack value.

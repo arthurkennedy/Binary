@@ -50,7 +50,7 @@ public abstract class Survivor {
      * @param survivorType the type of survivor.
      * @return the survivor's health.
      */
-    public abstract int getHealth(int survivorType);
+    public abstract int getHealth();
 
     /**
      * Set the survivor's attack value.

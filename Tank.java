@@ -50,8 +50,8 @@ public class Tank extends Zombie {
     }
 
     @Override
-    public int getHealth(int zombieType) {
-        return health;
+    public int getHealth() {
+        return this.health;
     }
 
     @Override

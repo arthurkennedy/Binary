@@ -45,12 +45,13 @@ public class CommonInfected extends Zombie {
     }
 
     @Override
-    public void setHealth(int[] zombie) {
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     @Override
-    public int getHealth(int zombieType) {
-        return health;
+    public int getHealth() {
+        return this.health;
     }
 
     @Override
