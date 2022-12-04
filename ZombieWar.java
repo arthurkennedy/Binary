@@ -1,15 +1,41 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+
+/*
+ * HELLO ARTHUR!!!
+ * I APPRECIATE YOU HELPING OUT WITH PART 2 AND ALLOWING ME TO DO 3 ON TIME
+ * TO SAY THANKS I WENT AHEAD AND DID PART 4 AS WELL SO THAT RELEASE 1 AND 2 WILL BE READY TO GO
+ * ALL YOU HAVE TO DO IS UN-COMMENT LINES:
+ *      31-34, 70, 91
+ * 
+ * THANKS AGAIN!!!  
+ */
+
 public class ZombieWar {
+
+    private static int children = 0;
+    private static int teachers = 0;
+    private static int soldiers = 0;
+    private static int commons = 0;
+    private static int tanks = 0;
 
     public static void main(String[] args){
         
         ArrayList<Survivor> survivors = generateSurvivors();
         ArrayList<Zombie> zombies = generateZombies();
 
+        //DELETE THIS FOR RELEASE 2 !!!
         System.out.println("We have " + survivors.size() + " survivors trying to make it to safety.");
-        System.out.println("But there are " + zombies.size() + " zombies waiting for them.");
+        System.out.println("But there are " + zombies.size() + " waiting for them.");
+        
+        // UN-COMMENT THIS FOR RELEASE 2 !!!
+        // System.out.println("We have " + survivors.size() + " survivors trying to make it to safety"
+        //                + "(" + children + " children, " + teachers + " teachers, " + soldiers + " soldiers)");
+        // System.out.println("But there are " + zombies.size() + " zombies waiting for them"
+        //                +"(" + commons + " common infected, " + tanks + " tanks)");
+        
+        
 
         fight(survivors, zombies);
 
@@ -41,6 +67,10 @@ public class ZombieWar {
                 zombies.get(0).setHealth(zombieHealth);
                 
                 if (zombieHealth <= 0){
+                    
+                    // UN-COMMENT THIS FOR RELEASE 2 !!!
+                    //System.out.println("   " + survivors.get(i).getId() + " killed " + zombies.get(0).getId());
+                    
                     zombies.remove(0);                              //Remove zombie from the list if its health has fallen to 0 or below
                 }
 
@@ -58,6 +88,10 @@ public class ZombieWar {
                 survivors.get(0).setHealth(survivorHealth);
 
                 if (survivorHealth <= 0){
+
+                    // UN-COMMENT THIS FOR RELEASE 2 !!!
+                    //System.out.println("   " + zombies.get(x).getId() + " killed " + survivors.get(0).getId());
+                    
                     survivors.remove(0);                            //Remove survivor from the list if their health has fallen to 0 or below
                 }
 
@@ -83,10 +117,12 @@ public class ZombieWar {
             //adds a random type of zombie to the list depending on the number generated
             switch(type){
                 case 1:
-                    z.add(new CommonInfected());
+                    commons++; 
+                    z.add(new CommonInfected("Common Infected " + commons));
                     break;
                 case 2: 
-                    z.add(new Tank());
+                    tanks++;
+                    z.add(new Tank("Tank " + tanks));
                     break;
             }
         }
@@ -105,13 +141,16 @@ public class ZombieWar {
             //adds a new survivor to the list depending on what random number gets generated
             switch(type){
                 case 1:
-                    s.add(new Child());
+                    children++;
+                    s.add(new Child("Child " + children));
                     break;
                 case 2:
-                    s.add(new Teacher());
+                    teachers++;
+                    s.add(new Teacher("Teacher " + teachers));
                     break;
                 case 3:
-                    s.add(new Soldier());
+                    soldiers++;
+                    s.add(new Soldier("Soldier " + soldiers));
                     break;
             }
         }
