@@ -30,10 +30,10 @@ public class ZombieWar {
         System.out.println("But there are " + zombies.size() + " waiting for them.");
         
         // UN-COMMENT THIS FOR RELEASE 2 !!!
-        // System.out.println("We have " + survivors.size() + " survivors trying to make it to safety"
-        //                + "(" + children + " children, " + teachers + " teachers, " + soldiers + " soldiers)");
-        // System.out.println("But there are " + zombies.size() + " zombies waiting for them"
-        //                +"(" + commons + " common infected, " + tanks + " tanks)");
+         System.out.println("We have " + survivors.size() + " survivors trying to make it to safety"
+                        + "(" + children + " children, " + teachers + " teachers, " + soldiers + " soldiers)");
+         System.out.println("But there are " + zombies.size() + " zombies waiting for them"
+                        +"(" + commons + " common infected, " + tanks + " tanks)");
         
         
 
@@ -69,7 +69,7 @@ public class ZombieWar {
                 if (zombieHealth <= 0){
                     
                     // UN-COMMENT THIS FOR RELEASE 2 !!!
-                    //System.out.println("   " + survivors.get(i).getId() + " killed " + zombies.get(0).getId());
+                    System.out.println("   " + survivors.get(i).getId() + " killed " + zombies.get(0).getId());
                     
                     zombies.remove(0);                              //Remove zombie from the list if its health has fallen to 0 or below
                 }
@@ -90,7 +90,7 @@ public class ZombieWar {
                 if (survivorHealth <= 0){
 
                     // UN-COMMENT THIS FOR RELEASE 2 !!!
-                    //System.out.println("   " + zombies.get(x).getId() + " killed " + survivors.get(0).getId());
+                    System.out.println("   " + zombies.get(x).getId() + " killed " + survivors.get(0).getId());
                     
                     survivors.remove(0);                            //Remove survivor from the list if their health has fallen to 0 or below
                 }
