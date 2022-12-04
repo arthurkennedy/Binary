@@ -10,6 +10,11 @@ public class Teacher extends Survivor {
     
     int teacherQuantity;
 
+    public Teacher(){
+        this.health = 50;
+        this.attack = 5;
+    }
+
     @Override
     public int getSurvivorQuantity() {
         return teacherQuantity;
@@ -26,8 +31,8 @@ public class Teacher extends Survivor {
     }
 
     @Override
-    public void setHealth(int[] survivor) {
-        health = 50;
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     @Override

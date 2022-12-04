@@ -43,7 +43,7 @@ public abstract class Survivor {
      * Set survivor's health.
      * @param survivor the array value of the survivor.
      */
-    public abstract void setHealth(int[] survivor);
+    public abstract void setHealth(int health);
 
     /**
      * Returns a survivor's health.

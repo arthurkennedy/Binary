@@ -19,6 +19,11 @@ public class CommonInfected extends Zombie {
     // This should be specific to the zombie type class because it's a count of a specific type of zombie,
     // not quantity of zombies all together.
 
+    public CommonInfected(){
+        this.health = 30;
+        this.attack = 5;
+    }
+
     @Override
     public int getZombieQuantity() {
         return commonInfectedQuantity;

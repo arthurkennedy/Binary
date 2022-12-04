@@ -9,6 +9,11 @@ public class Soldier extends Survivor {
     
     int soldierQuantity;
 
+    public Soldier(){
+        this.health = 100;
+        this.attack = 10;
+    }
+
     @Override
     public int getSurvivorQuantity() {
         return soldierQuantity;
@@ -25,8 +30,8 @@ public class Soldier extends Survivor {
     }
 
     @Override
-    public void setHealth(int[] survivor) {
-        health = 100;
+    public void setHealth(int health) {
+        this.health = health; 
     }
 
     @Override

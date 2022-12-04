@@ -8,6 +8,11 @@ public class Child extends Survivor {
     
     int childQuantity;
 
+    public Child(){
+        this.health = 20;
+        this.attack = 2;
+    }
+
     @Override
     public int getSurvivorQuantity() {
         return childQuantity;
@@ -24,8 +29,8 @@ public class Child extends Survivor {
     }
 
     @Override
-    public void setHealth(int[] survivor) {
-        health = 20;
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     @Override

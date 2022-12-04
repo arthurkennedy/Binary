@@ -19,6 +19,11 @@ public class Tank extends Zombie {
     // This should be specific to the zombie type class because it's a count of a specific type of zombie,
     // not quantity of zombies all together.
 
+    public Tank(){
+        this.health = 150;
+        this.attack = 20;
+    }
+
     @Override
     public int getZombieQuantity() {
         return tankQuantity;
@@ -40,8 +45,8 @@ public class Tank extends Zombie {
     }
 
     @Override
-    public void setHealth(int[] zombie) {
-        health = 150;
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     @Override

@@ -43,7 +43,7 @@ public abstract class Zombie {
      * Set zombie's health.
      * @param zombie the array value of the zombie.
      */
-    public abstract void setHealth(int[] zombie);
+    public abstract void setHealth(int health);
 
     /**
      * Returns a zombie's health.
