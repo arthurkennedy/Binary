@@ -142,15 +142,15 @@ public class ZombieWar {
             switch(type){
                 case 1:
                     children++;
-                    s.add(new Child("Child " + children));
+                    s.add(new Child("Child " + children, null)); //null param a placeholder for weapon
                     break;
                 case 2:
                     teachers++;
-                    s.add(new Teacher("Teacher " + teachers));
+                    s.add(new Teacher("Teacher " + teachers, null)); //null param a placeholder for weapon
                     break;
                 case 3:
                     soldiers++;
-                    s.add(new Soldier("Soldier " + soldiers));
+                    s.add(new Soldier("Soldier " + soldiers, null)); //null param a placeholder for weapon
                     break;
             }
         }
