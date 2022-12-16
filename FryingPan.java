@@ -1,8 +1,12 @@
 public class FryingPan extends Weapon{
 
+    public FryingPan(){
+        this.weaponType = "Frying Pan";
+        this.weaponDamage = 1000;
+    }
+
     @Override
     public String getType() {
-        weaponType = "Frying Pan";
         return weaponType;
     }
 

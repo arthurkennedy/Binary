@@ -1,8 +1,12 @@
 public class Crowbar extends Weapon{
 
+    public Crowbar(){
+        this.weaponType = "Crowbar";
+        this.weaponDamage = 10;
+    }
+
     @Override
     public String getType() {
-        weaponType = "Crowbar";
         return weaponType;
     }
 

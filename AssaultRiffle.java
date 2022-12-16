@@ -1,8 +1,13 @@
 public class AssaultRiffle extends Weapon{
 
+
+    public AssaultRiffle(){
+        this.weaponType = "Assault Rifle";
+        this.weaponDamage = 30;
+    }
+
     @Override
     public String getType() {
-        weaponType = "Assault Riffle";
         return weaponType;
     }
 

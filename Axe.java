@@ -1,8 +1,12 @@
 public class Axe extends Weapon{
 
+    public Axe(){
+        this.weaponType = "Axe";
+        this.weaponDamage = 30;
+    }
+
     @Override
     public String getType() {
-        weaponType = "Axe";
         return weaponType;
     }
 
