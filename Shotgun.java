@@ -16,8 +16,11 @@ public class Shotgun extends Weapon {
     }
 
     @Override
-    public int getDamage() {
-        return weaponDamage;
+    public int getDamage(int accuracy) {
+        if      (accuracy <= 10){ return weaponDamage; }
+        else if (accuracy <= 50){ return weaponDamage / 2; }
+        else if (accuracy <= 90){ return weaponDamage / 3; }
+        else                    { return weaponDamage - weaponDamage; }
     }
 
     @Override
@@ -48,6 +51,6 @@ public class Shotgun extends Weapon {
  * have a sliding accuracy range. Meaning: 
  * >10% chance for full damage : 60 dmg
  * >40% chance for half damage : 30 dmg (This still 1-shots common infected)
- * >40% chance for 30% damage : 18 dmg
+ * >40% chance for 33% damage  : 20 dmg
  * >10% chance for 0 damage
 */

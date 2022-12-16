@@ -16,8 +16,10 @@ public class Crowbar extends Weapon{
     }
 
     @Override
-    public int getDamage() {
-        return weaponDamage;
+    public int getDamage(int accuracy) {
+        if      (accuracy <= 20){ return weaponDamage; }
+        else if (accuracy <= 90){ return weaponDamage / 2; }
+        else                    { return weaponDamage - weaponDamage; }
     }
 
     @Override

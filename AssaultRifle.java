@@ -17,8 +17,11 @@ public class AssaultRifle extends Weapon{
     }
 
     @Override
-    public int getDamage() {
-        return weaponDamage;
+    public int getDamage(int accuracy) {
+        if      (accuracy <= 10){ return weaponDamage; }
+        else if (accuracy <= 50){ return weaponDamage / 2; }
+        else if (accuracy <= 90){ return weaponDamage / 4; }
+        else                    { return weaponDamage - weaponDamage; }
     }
 
     @Override
@@ -43,6 +46,6 @@ public class AssaultRifle extends Weapon{
  * The same percentage breakdown as the shotgun can apply to the assault riffe:
  * >10% chance for "headshot" : 30 dmg
  * >40% chance for 50% damage : 15 dmg
- * >40% chance for 30% damage : 9 dmg
+ * >40% chance for 25% damage :  7 dmg
  * >10% chance for 0 damage
 */

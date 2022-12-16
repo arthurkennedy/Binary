@@ -16,8 +16,10 @@ public class Pistol extends Weapon{
     }
 
     @Override
-    public int getDamage() {
-        return weaponDamage;
+    public int getDamage(int accuracy) {
+        if      (accuracy <= 25){ return weaponDamage; }
+        else if (accuracy <= 75){ return weaponDamage / 2; }
+        else                    { return weaponDamage - weaponDamage; }
     }
 
     @Override

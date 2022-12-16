@@ -16,7 +16,7 @@ public class FryingPan extends Weapon{
     }
 
     @Override
-    public int getDamage() {
+    public int getDamage(int accuracy) {
         return weaponDamage;
     }
 

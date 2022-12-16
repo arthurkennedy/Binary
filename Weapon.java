@@ -17,7 +17,7 @@ public abstract class Weapon {
     /**
      * @return weapon damage (int)
      */
-    public abstract int getDamage();
+    public abstract int getDamage(int accuracy);
 
     /**
      * @param weaponDamage amount of damage weapon does (int)
