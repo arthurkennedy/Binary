@@ -1,5 +1,4 @@
 
-
 /**
  *
  * @author arthu
@@ -10,10 +9,11 @@ public class Teacher extends Survivor {
     
     int teacherQuantity;
 
-    public Teacher(String id){
+    public Teacher(String id, Weapon weapon){
         this.health = 50;
         this.attack = 5;
         this.id = id;
+        this.weapon = weapon;
     }
 
     public String getId(){
@@ -53,6 +53,16 @@ public class Teacher extends Survivor {
     @Override
     public int getAttack() {
         return attack;
+    }
+    
+    @Override
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+    
+    @Override
+    public Weapon getWeapon() {
+        return this.weapon;
     }
 
     @Override
