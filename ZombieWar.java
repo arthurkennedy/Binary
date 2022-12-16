@@ -52,19 +52,23 @@ public class ZombieWar {
         if (survivors.size() == 0) { sEmpty = true; }
         if (zombies.size() == 0) { zEmpty = true; }
 
+        int accuracy; //this will hold a value between 1-100 to be used for the accuracy of weapons
+
         //This is the fight loop, we will continue looping the fight until one of these lists is empty
         while (sEmpty == false && zEmpty == false){
             //First ever survivor gets a chance to attack!
             for (int i=0; i<survivors.size(); i++){
 
+                accuracy = getRandomNumber(100);
+
                 int zombieHealth = zombies.get(0).getHealth();      //Get the health of the next zombie in the list
-                zombieHealth -= survivors.get(i).getWeapon().getDamage();             //Subtract the attack of the survivor from the heatlh of the zombie
+                zombieHealth -= survivors.get(i).getWeapon().getDamage(accuracy);             //Subtract the attack of the survivor from the heatlh of the zombie
                 zombies.get(0).setHealth(zombieHealth);
                 
                 if (zombieHealth <= 0){
                     
                     // UN-COMMENT THIS FOR RELEASE 2 !!!
-                    System.out.println("   " + survivors.get(i).getId() + " killed " + zombies.get(0).getId() + " with a " + survivors.get(i).getWeapon().weaponType);
+                    System.out.println("   " + survivors.get(i).getId() + " killed " + zombies.get(0).getId() + " with a " + survivors.get(i).getWeapon().weaponType + " that did " + survivors.get(i).getWeapon().weaponDamage + " damage.");
                     
                     zombies.remove(0);                              //Remove zombie from the list if its health has fallen to 0 or below
                 }
