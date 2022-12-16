@@ -105,7 +105,7 @@ public class ZombieWar {
         //Create a list of zombies to send back to main
         ArrayList<Zombie> z = new ArrayList<>();
 
-        int numOfZombies = getRandomNumber(5);
+        int numOfZombies = getRandomNumber(30);
 
         for (int i=0; i < numOfZombies; i++){
             int type = getRandomNumber(2);  //generates either 1 or 2 at random
@@ -129,7 +129,7 @@ public class ZombieWar {
         //Create a list of survivors to send back to main
         ArrayList<Survivor> s = new ArrayList<>();
 
-        int numOfSurvivors = getRandomNumber(10000);
+        int numOfSurvivors = getRandomNumber(30);
 
         Weapon weapon;
 
