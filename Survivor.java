@@ -14,7 +14,9 @@ public abstract class Survivor {
     int health; //The value of the character's health
     int attack; //The value of the character's attack against the zombies
     String id;     //The [type + number] that identifies which survivor this is
-
+       
+    Weapon weapon; //weapon declaration
+    
     /**
      * Returns the ID of the survivor
      * @return the ID of the survivor
@@ -70,6 +72,12 @@ public abstract class Survivor {
      * @return the survivor's attack strength value.
      */
     public abstract int getAttack();
+    
+    /* 
+        set and returns the survior's weapon
+    */
+    public abstract void setWeapon(Weapon weapon);
+    public abstract Weapon getWeapon();
 
     /**
      * Returns whether a character is dead.
