@@ -1,7 +1,7 @@
 public class FryingPan extends Weapon{
 
     public FryingPan(){
-        this.weaponType = "Frying Pan";
+        this.weaponType = "FRYING PAN!!!";
         this.weaponDamage = 1000;
     }
 
