@@ -25,11 +25,6 @@ public class ZombieWar {
         ArrayList<Survivor> survivors = generateSurvivors();
         ArrayList<Zombie> zombies = generateZombies();
 
-        //DELETE THIS FOR RELEASE 2 !!!
-        System.out.println("We have " + survivors.size() + " survivors trying to make it to safety.");
-        System.out.println("But there are " + zombies.size() + " waiting for them.");
-        
-        // UN-COMMENT THIS FOR RELEASE 2 !!!
          System.out.println("We have " + survivors.size() + " survivors trying to make it to safety"
                         + "(" + children + " children, " + teachers + " teachers, " + soldiers + " soldiers)");
          System.out.println("But there are " + zombies.size() + " zombies waiting for them"
@@ -63,13 +58,13 @@ public class ZombieWar {
             for (int i=0; i<survivors.size(); i++){
 
                 int zombieHealth = zombies.get(0).getHealth();      //Get the health of the next zombie in the list
-                zombieHealth -= survivors.get(i).getAttack();             //Subtract the attack of the survivor from the heatlh of the zombie
+                zombieHealth -= survivors.get(i).getWeapon().getDamage();             //Subtract the attack of the survivor from the heatlh of the zombie
                 zombies.get(0).setHealth(zombieHealth);
                 
                 if (zombieHealth <= 0){
                     
                     // UN-COMMENT THIS FOR RELEASE 2 !!!
-                    System.out.println("   " + survivors.get(i).getId() + " killed " + zombies.get(0).getId());
+                    System.out.println("   " + survivors.get(i).getId() + " killed " + zombies.get(0).getId() + " with a " + survivors.get(i).getWeapon().weaponType);
                     
                     zombies.remove(0);                              //Remove zombie from the list if its health has fallen to 0 or below
                 }
@@ -110,7 +105,7 @@ public class ZombieWar {
         //Create a list of zombies to send back to main
         ArrayList<Zombie> z = new ArrayList<>();
 
-        int numOfZombies = getRandomNumber(30);
+        int numOfZombies = getRandomNumber(5);
 
         for (int i=0; i < numOfZombies; i++){
             int type = getRandomNumber(2);  //generates either 1 or 2 at random
@@ -134,29 +129,57 @@ public class ZombieWar {
         //Create a list of survivors to send back to main
         ArrayList<Survivor> s = new ArrayList<>();
 
-        int numOfSurvivors = getRandomNumber(30);
+        int numOfSurvivors = getRandomNumber(10000);
+
+        Weapon weapon;
 
         for (int i=0; i<numOfSurvivors; i++){
             int type = getRandomNumber(3);  //generates 1, 2, or 3 at random
+            weapon = weaponCache();             //generates a random weapon for the survivor
+
             //adds a new survivor to the list depending on what random number gets generated
             switch(type){
                 case 1:
                     children++;
-                    s.add(new Child("Child " + children, null)); //null param a placeholder for weapon
+                    s.add(new Child("Child " + children, weapon));
                     break;
                 case 2:
                     teachers++;
-                    s.add(new Teacher("Teacher " + teachers, null)); //null param a placeholder for weapon
+                    s.add(new Teacher("Teacher " + teachers, weapon));
                     break;
                 case 3:
                     soldiers++;
-                    s.add(new Soldier("Soldier " + soldiers, null)); //null param a placeholder for weapon
+                    s.add(new Soldier("Soldier " + soldiers, weapon));
                     break;
             }
         }
 
         return s;
         
+    }
+
+    /*
+     * This is the weapon cache, every survivor gets one chance to reach into the cache and remove a weapon
+     * The odds for recieving each weapon are as follows:
+     * __________________________________
+     * |Assault Rifle| 15% |   615/4096 |
+     * |Axe          | 15% |   615/4096 |
+     * |Crowbar      | 40% |   1637/4096|
+     * |Frying Pan   | <1% |   1/4096   |
+     * |Pistol       | 20% |   819/4096 |
+     * |Shotgun      | 10% |   409/4096 |
+     * |________________________________|
+     */
+    private static Weapon weaponCache(){
+        int x = getRandomNumber(4096);
+
+        if      (x == 1)  { return new FryingPan(); }
+        else if (x < 410) { return new Shotgun(); }
+        else if (x < 1025){ return new AssaultRifle(); }
+        else if (x < 1640){ return new Axe(); }
+        else if (x < 2459){ return new Pistol(); }
+        else              { return new Crowbar(); }
+
     }
 
     //This method will return a random number between 1 and the max sent
