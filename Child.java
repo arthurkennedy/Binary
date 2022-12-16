@@ -8,10 +8,11 @@ public class Child extends Survivor {
     
     int childQuantity;
 
-    public Child(String id){
+    public Child(String id, Weapon weapon){
         this.health = 20;
         this.attack = 2;
         this.id = id;
+        this.weapon = weapon;
     }
 
     public String getId(){
@@ -51,6 +52,16 @@ public class Child extends Survivor {
     @Override
     public int getAttack() {
         return attack;
+    }
+    
+    @Override
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+    
+    @Override
+    public Weapon getWeapon() {
+        return this.weapon;
     }
 
     @Override
